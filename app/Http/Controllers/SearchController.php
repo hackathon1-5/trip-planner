@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Place;
+use App\Models\PlaceType;
+use GoogleMaps\GoogleMaps;
 use Illuminate\Http\Request;
+use PulkitJalan\Google\Facades\Google;
 
 class SearchController extends Controller
 {
@@ -13,7 +17,19 @@ class SearchController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $places = Place::with('place_types')->get();
+
+//        echo '<pre>'; print_r($places); echo '</pre>';
+//        $this->mapsTest();
+
+        return view('index', ['places' => $places]);
+    }
+
+    protected function mapsTest() {
+        $response = \GoogleMaps::load('geocoding')
+            ->setParam (['address' =>'santa cruz'])
+            ->get();
+        print_r($response);
     }
 
     /**

@@ -6,11 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "alexpechkarev/google-maps": "^9.0",
         "fruitcake/laravel-cors": "^2.0",
+        "google/apiclient": "^2.12",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "pulkitjalan/google-apiclient": "^5.0",
+        "skagarwal/google-places-api": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
