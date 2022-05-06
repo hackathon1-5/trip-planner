@@ -9,6 +9,9 @@ class Activity extends Model
 {
     use HasFactory;
 
+    protected $table = 'activities';
+    protected $fillable = ['name', 'outdoor'];
+
     static public function testData() {
         return [
             'bicycling',
