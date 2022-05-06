@@ -41,6 +41,6 @@ class AddRestaurants extends Migration
     public function down()
     {
         $place_type_id = PlaceType::where('name', 'restaurant')->value('id');
-        Place::where('place_type_id', $place_type_id)->get();
+        Place::where('place_type_id', $place_type_id)->delete();
     }
 }
